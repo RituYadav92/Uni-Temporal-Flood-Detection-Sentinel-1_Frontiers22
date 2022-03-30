@@ -61,14 +61,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     # Define path
-    ROOT_PATH = Path(<ADD DATASET PATH HERE>)
+    ROOT_PATH = Path(<ADD DATASET PATH HERE---------->)
     DATA_PATH = ROOT_PATH / 'Data'
     IMG_PATH = DATA_PATH / "S1"
     DEM_PATH = DATA_PATH / "TEST10"
     JRC_PATH = DATA_PATH / "JRCWaterHand"
-    LABEL_PATH = DATA_PATH / "Labels"
-    WEIGHT_PATH = Path(<ADD WEIGHT FILE PATH HERE>)
-    WEIGHT_file = <ADD FILE NAME HERE>
+    LABEL_PATH = DATA_PATH / "Labels"    
     
     # load data
     train_x, train_y, val_x, val_y = load_data(ROOT_PATH)
@@ -102,4 +100,6 @@ if __name__ == '__main__':
         
     if args.command == "evaluate":
         print('Evaluating Fusion Network')
+        WEIGHT_PATH = Path(<ADD WEIGHT FILE PATH HERE---------->)
+        WEIGHT_file = <ADD FILE NAME HERE--------->
         evaluate_fusion(WEIGHT_PATH, WEIGHT_file)

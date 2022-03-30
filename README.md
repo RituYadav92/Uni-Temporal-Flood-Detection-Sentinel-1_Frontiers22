@@ -14,6 +14,7 @@ python3 flood.py train
 
 # Evaluate the model
 python3 flood.py evaluate 
+```
 
 ## Contact Information: 
 Ritu Yadav (Email: er.ritu92@gmail.com)

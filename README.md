@@ -11,6 +11,8 @@ Floods are occurring across the globe, and due to climate change, flood events a
 
 <img src="https://github.com/RituYadav92/Uni-Temporal-Flood-Detection-Sentinel-1/blob/main/frsen-03-1060144-g001.jpg" alt="Flood Sites" width="350" height="200">&nbsp; &nbsp; &nbsp;<img src="https://github.com/RituYadav92/Uni-Temporal-Flood-Detection-Sentinel-1/blob/main/GEE_Sample_vis.JPG" alt="GEE App sample visualization" width="300" height="200">
 
+<img src="https://github.com/RituYadav92/Uni-Temporal-Flood-Detection-Sentinel-1/blob/main/Quant_results.JPG" alt="Flood Sites" width="450" height="250">
+
 ## Training and Evaluation
 Training and evaluation code is in `flood.py`. Before training or evaluating add dataset path, weight path and weight file name.
 ```

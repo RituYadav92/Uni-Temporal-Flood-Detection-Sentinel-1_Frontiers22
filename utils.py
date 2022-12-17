@@ -163,6 +163,8 @@ def Inference(ind, file_x, file_y, model):
   pred_mask = model.predict([img_input,inf_input])
   pred_mask = np.squeeze(pred_mask[0]).round()
 
+  imsave(OUT_FOLDER / f"{name_Split[0]}_{name_Split[1]}_Fusion_mask.tif", pred_mask.astype(np.uint8))
+
   lbl = np.ma.masked_array(lbl, invalid_mask).filled(0)
   pred_mask = np.ma.masked_array(pred_mask, invalid_mask).filled(0)
   GT = lbl

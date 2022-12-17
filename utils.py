@@ -8,15 +8,9 @@ from skimage.io import imread, imshow, imread_collection, concatenate_images, im
 import cv2 as cv
 import csv
 import random
+from config import *
 
-ROOT_PATH = Path("/content/gdrive/My Drive/Colab Notebooks/flood/sen1floods11")
-DATA_PATH = ROOT_PATH / 'Data'
-IMG_PATH = DATA_PATH / "S1"
-DEM_PATH = DATA_PATH / "TEST10"
-JRC_PATH = DATA_PATH / "JRCWaterHand"
-LABEL_PATH = DATA_PATH / "Labels"
-
-def load_csv_data(ROOT_PATH, fname):  
+def load_csv_data(fname):  
   my_file = ROOT_PATH / fname
   x = []
   y = []
@@ -26,27 +20,12 @@ def load_csv_data(ROOT_PATH, fname):
       y.append(line[1])
   return x, y
 
-def load_data(ROOT_PATH):
-  # use both train and val for training
-  train1_x, train1_y = load_csv_data(ROOT_PATH, fname = "flood_train_data.csv")
-  train2_x, train2_y = load_csv_data(ROOT_PATH, fname = "flood_valid_data.csv")
-  train_x, train_y = (train1_x + train2_x), (train1_y + train2_y)
-  val_x, val_y = load_csv_data(ROOT_PATH, fname = "flood_test_data.csv")
-  left = [ 'Paraguay_34417_nasadem.tif']
-
-  for fname in left:
-      name_Split = str.split(fname, '_')
-      s1_fname = name_Split[0] + '_' + name_Split[1] + '_' + 'S1Hand'+ '.tif'
-      lbl_fname = name_Split[0] + '_' + name_Split[1] + '_' + 'LabelHand'+ '.tif'
-      if s1_fname in train_x:
-        train_x.remove(s1_fname)
-        train_y.remove(lbl_fname)
-      if s1_fname in val_x:
-        val_x.remove(s1_fname)
-        val_y.remove(lbl_fname)
-
+def load_data():
   print('Load train images and masks ... ')
-
+  train1_x, train1_y = load_csv_data(fname = "flood_train_data.csv")
+  train2_x, train2_y = load_csv_data(fname = "flood_valid_data.csv")
+  train_x, train_y = (train1_x + train2_x), (train1_y + train2_y)
+  val_x, val_y = load_csv_data(fname = "flood_test_data.csv")
   return train_x, train_y, val_x, val_y
 
 def scale_img(matrix):
@@ -156,7 +135,7 @@ class Cust_DatasetGenerator(tf.keras.utils.Sequence):
           
           return ([batch_imgx, batch_infx], batch_y)
           
-def Inference(ind, file_x, file_y, model, OUT_FOLDER):
+def Inference(ind, file_x, file_y, model):
   
   fname = file_x[ind]
   name_Split = str.split(fname, '_')  
@@ -179,20 +158,14 @@ def Inference(ind, file_x, file_y, model, OUT_FOLDER):
   inf_raw[:,:,1] = np.nan_to_num(np.ma.masked_array(inf_raw[:,:,1], invalid_mask).filled(0) )
   inf_raw[:,:,2] = np.nan_to_num(np.ma.masked_array(inf_raw[:,:,2], invalid_mask).filled(0) )
 
-
   img_input = tf.expand_dims(img_raw, axis=0)
   inf_input = tf.expand_dims(inf_raw, axis=0)
   pred_mask = model.predict([img_input,inf_input])
   pred_mask = np.squeeze(pred_mask[0]).round()
 
-#   imsave(OUT_FOLDER / f"{name_Split[0]}_{name_Split[1]}_Fusion_mask.tif", pred_mask.astype(np.uint8))
-
   lbl = np.ma.masked_array(lbl, invalid_mask).filled(0)
   pred_mask = np.ma.masked_array(pred_mask, invalid_mask).filled(0)
-
   GT = lbl
-
   intersection = np.logical_and(GT, pred_mask).sum()
   union = np.logical_or(GT, pred_mask).sum()
-
   return intersection, union

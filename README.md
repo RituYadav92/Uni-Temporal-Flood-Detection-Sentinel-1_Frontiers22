@@ -2,8 +2,8 @@
 [![TensorFlow 2.2](https://img.shields.io/badge/tensorflow-2.4-blue.svg)](https://github.com/tensorflow/tensorflow/releases/tag/v1.15.2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/RituYadav92/NuScenes_radar_RGBFused-Detection/blob/master/LICENCE)
 
-# Deep Attentive Fusion network for Flood Detection on Uni-temporal Sentinel-1 Data
-[Frontiers in Remote Sensing, DOI: https://doi.org/10.3389/frsen.2022.1060144]
+# Deep Attentive Fusion network for Flood Detection on Uni-temporal Sentinel-1 Data (Frontiers in Remote Sensing)
+[DOI: https://doi.org/10.3389/frsen.2022.1060144]
 
 [GEE App : https://erritu92.users.earthengine.app/view/flooddetectionunitemporal]
 ## Description: 

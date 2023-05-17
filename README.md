@@ -28,11 +28,11 @@ Ritu Yadav (Email: er.ritu92@gmail.com)
 
 ## Cite
 Please cite our code if you use it.
-      @article{yadav2022deep,
-        title={Deep attentive fusion network for flood detection on uni-temporal Sentinel-1 data},
-        author={Yadav, Ritu and Nascetti, Andrea and Ban, Yifang},
-        journal={Frontiers in Remote Sensing},
-        pages={106},
-        year={2022},
-        publisher={Frontiers}
-      }
+            @article{yadav2022deep,
+              title={Deep attentive fusion network for flood detection on uni-temporal Sentinel-1 data},
+              author={Yadav, Ritu and Nascetti, Andrea and Ban, Yifang},
+              journal={Frontiers in Remote Sensing},
+              pages={106},
+              year={2022},
+              publisher={Frontiers}
+            }

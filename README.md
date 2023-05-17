@@ -27,7 +27,7 @@ python3 flood.py evaluate
 Ritu Yadav (Email: er.ritu92@gmail.com)
 
 ## Cite
-Please cite our code if you use it.
+Please cite our work if you use our code.
 
 
             @article{yadav2022deep,

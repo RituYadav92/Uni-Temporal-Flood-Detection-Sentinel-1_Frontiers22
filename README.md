@@ -25,6 +25,7 @@ python3 flood.py evaluate
 
 ## Cite
 Please cite our work if you use our code.
+```
             @article{yadav2022deep,
               title={Deep attentive fusion network for flood detection on uni-temporal Sentinel-1 data},
               author={Yadav, Ritu and Nascetti, Andrea and Ban, Yifang},
@@ -33,5 +34,7 @@ Please cite our work if you use our code.
               year={2022},
               publisher={Frontiers}
             }
+```
+
 ## Contact Information: 
 Ritu Yadav (Email: er.ritu92@gmail.com)

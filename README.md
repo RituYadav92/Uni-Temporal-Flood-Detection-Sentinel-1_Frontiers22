@@ -35,6 +35,9 @@ Please cite our work if you use our code.
               publisher={Frontiers}
             }
 ```
-
+## Dataset Citation:
+```bash
+Ritu Yadav, “Modified Sen1Floods11 Dataset for Change Detection”. Zenodo, May 17, 2023. doi: 10.5281/zenodo.7946594.
+```
 ## Contact Information: 
 Ritu Yadav (Email: er.ritu92@gmail.com)

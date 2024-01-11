@@ -37,7 +37,7 @@ Please cite our work if you use our code.
 ```
 ## Dataset Citation:
 ```bash
-@misc{Yadav_2023, title={Dataset for Attentive Dual Stream Siamese U-Net for Flood Detection on Multi-Temporal Sentinel-1 Data}, DOI={10.5281/zenodo.7946593}, publisher={Zenodo}, author={Yadav, Ritu}, year={2023} }
+Ritu Yadav, “Modified Sen1Floods11 Dataset for Change Detection”. Zenodo, May 17, 2023. doi: 10.5281/zenodo.7946594.
 ```
 ## Contact Information: 
 Ritu Yadav (Email: er.ritu92@gmail.com)
